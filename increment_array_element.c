@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  array.c
+ *       Filename:  increment_array_element.c
  *
- *    Description:  Arrays
+ *    Description:  
  *
  *        Version:  1.0
- *        Created:  02/14/2017 09:15:59
+ *        Created:  03/01/2017 11:27:26
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -15,6 +15,7 @@
  *
  * =====================================================================================
  */
+
 #include<stdio.h>
 #include<string.h>
 
@@ -29,19 +30,17 @@ void clr()
 
 int main()
 {
+        int x[] = {1,2,3,4,5,6,7,8,9};
+	int i, *p;
 	clr();
-	float e[5];
-	printf("Enter elements of the array: \n");
-	for (int i = 0; i < 5; i++) {
-		scanf("%f", &e[i]);
+	p = x;
+	for (i = 0; i < 9; i++)
+	{
+		printf("\n \tArray Elements x[%d] is %d", i, *p);
+		printf("\n \tArray Elements x[%d] is %d", i, *p + 5);
+		printf("\n \tArray Elements x[%d] is %d", i, *p * 5);
+		p++;
 	}
-	printf("Elements of an array e:\n ");
-	for (int j = 0; j < i; j++) {
-		printf("%f ", e[j]);
-	}
-	printf("Memory map for the Array of Elements!");
-	for (int f = 0; f < i; f++) {
-		printf("\n the variable e[%d] the value %f at Memory address %d", f, e[f], &e[f]);
-	}
-}
 
+	getchar();
+}

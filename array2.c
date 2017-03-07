@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  array.c
+ *       Filename:  array2.c
  *
- *    Description:  Arrays
+ *    Description:  Arrays, Memorry maps
  *
  *        Version:  1.0
- *        Created:  02/14/2017 09:15:59
+ *        Created:  02/22/2017 11:31:49
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -15,6 +15,7 @@
  *
  * =====================================================================================
  */
+
 #include<stdio.h>
 #include<string.h>
 
@@ -24,24 +25,19 @@ void gotoxy(int x,int y)
 }
 void clr()
 {
-	system("clear");
+        system("clear");
 }
 
 int main()
 {
 	clr();
 	float e[5];
-	printf("Enter elements of the array: \n");
-	for (int i = 0; i < 5; i++) {
-		scanf("%f", &e[i]);
-	}
-	printf("Elements of an array e:\n ");
-	for (int j = 0; j < i; j++) {
-		printf("%f ", e[j]);
-	}
-	printf("Memory map for the Array of Elements!");
-	for (int f = 0; f < i; f++) {
-		printf("\n the variable e[%d] the value %f at Memory address %d", f, e[f], &e[f]);
-	}
-}
+	int x[10] = { 12, 123, 324, 566, 456, 234, 456, 678, 234, 345 };
+	gotoxy(10, 10);
 
+	printf("Following is a memorry map for initialized array! \n");
+	for (int i = 0; i < 10; i++) {
+		printf("\n Variable x[%d] Value %d Memorry Address %u", i, x[i], &x[i]);
+	}
+	getchar();
+}
